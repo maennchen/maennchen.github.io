@@ -14,3 +14,7 @@ github_username:  maennchen
 # Build settings
 markdown: kramdown
 exclude: ['config.ru', 'Gemfile', 'Gemfile.lock', 'vendor', 'Procfile', 'Rakefile']
+
+#Sass
+sass:
+    style: :compressed
