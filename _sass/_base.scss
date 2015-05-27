@@ -1,3 +1,5 @@
+@import "flexbox";
+
 /**
  * Reset some basic elements
  */
@@ -17,7 +19,7 @@ body {
     font-family: $base-font-family;
     font-size: $base-font-size;
     line-height: $base-line-height;
-    font-weight: 300;
+    font-weight: 400;
     color: $text-color;
     background-color: $background-color;
     -webkit-text-size-adjust: 100%;
@@ -80,7 +82,7 @@ li {
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 300;
+    font-weight: 600;
 }
 
 
@@ -111,7 +113,7 @@ blockquote {
     color: $grey-color;
     border-left: 4px solid $grey-color-light;
     padding-left: $spacing-unit / 2;
-    font-size: 18px;
+    font-size: 1.2rem;
     letter-spacing: -1px;
     font-style: italic;
 
@@ -127,19 +129,24 @@ blockquote {
  */
 pre,
 code {
-    font-size: 15px;
+    font-size: 1.2rem;
     border: 1px solid $grey-color-light;
     border-radius: 3px;
-    background-color: #eef;
+    background-color: #4e4480;
 }
 
 code {
     padding: 1px 5px;
+    white-space: nowrap;
+}
+pre,
+pre > code {
+    white-space: pre;
 }
 
 pre {
     padding: 8px 12px;
-    overflow-x: scroll;
+    overflow-x: auto;
 
     > code {
         border: 0;
@@ -148,57 +155,30 @@ pre {
     }
 }
 
-
-
-/**
- * Wrapper
- */
-.wrapper {
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: $spacing-unit;
-    padding-left: $spacing-unit;
-    @extend %clearfix;
-
-    @include media-query($on-laptop) {
-        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
-        padding-right: $spacing-unit / 2;
-        padding-left: $spacing-unit / 2;
-    }
+a:hover {
+    text-decoration: none;
 }
 
+.no-hover,
+a:visited {
+    color: $brand-color;
+}
 
+dl {
+    overflow: hidden;
 
-/**
- * Clearfix
- */
-%clearfix {
-
-    &:after {
-        content: "";
-        display: table;
+    dt {
         clear: both;
+        float: left;
+        width: 1rem;
+    }
+    dd {
+        width: calc(100% - 2rem);
+        float: right;
     }
 }
 
-
-
-/**
- * Icons
- */
-.icon {
-
-    > svg {
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        vertical-align: middle;
-
-        path {
-            fill: $grey-color;
-        }
-    }
+iframe {
+    width: 100%;
+    height: 350px;
 }
