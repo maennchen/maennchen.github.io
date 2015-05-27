@@ -13,5 +13,4 @@ github_username:  maennchen
 
 # Build settings
 markdown: kramdown
-gems: ['kramdown']
 exclude: ['config.ru', 'Gemfile', 'Gemfile.lock', 'vendor', 'Procfile', 'Rakefile']
