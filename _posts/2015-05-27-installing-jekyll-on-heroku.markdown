@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Installing Jekyll 2.5 on Heroku"
+title:  Installing Jekyll 2.5 on Heroku
 date:   2015-05-27 20:22:13
 categories: jekyll heroku buildpack
 ---
