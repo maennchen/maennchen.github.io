@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Job Search Resources
-icon: lock
 robots: noindex
 ---
 
