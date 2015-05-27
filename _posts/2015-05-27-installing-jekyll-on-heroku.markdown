@@ -19,7 +19,7 @@ git push heroku master
 {% endhighlight %}
 
 ## Fix fucked up buildpack
-If you allready followed any of the popular tutorials, you'll have a custom buildpack set in Heroku. To reset the buildpack run this command:
+If you allready followed any of the popular tutorials, you'll have a custom buildpack set in Heroku. To reset the buildpack, run this command:
 
 {% highlight bash %}
 heroku buildpacks:set https://github.com/heroku/heroku-buildpack-ruby.git
