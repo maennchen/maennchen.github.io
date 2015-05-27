@@ -2,6 +2,12 @@
 <html>
   {% include head.html %}
   <body>
+    <!--[if lte IE 10]>
+    <div id="ie">
+      <h4>Did you know that your browser is out of date?</h4>
+      <p>If you’re reading this, you’re using Internet Explorer 9 or older. Unfortunately this site is built using flexbox and won't work with IE 9 or older. So I strongly recommend upgrading to <a href="http://www.getfirefox.com/">Firefox</a>, <a href="http://www.opera.com/">Opera</a>, <a href="http://www.apple.com/safari/">Safari</a>, <a href="http://www.google.com/chrome">Google Chrome</a>, or a more recent version of <a href="http://www.microsoft.com/windows/downloads/ie/getitnow.mspx">Internet Explorer</a>.</p>
+    </div>
+    <![endif]-->
     {{ content }}
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
