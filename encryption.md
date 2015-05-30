@@ -2,6 +2,7 @@
 layout: page
 title: Encryption
 icon: lock
+description: Contact me securely with the following Public Keys
 ---
 
 ## PGP
