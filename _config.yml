@@ -8,6 +8,7 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://commanders.ch" # the base hostname & protocol for your site
 twitter_username: maennchen_
 github_username:  maennchen
+asset_version: 1
 
 # Build settings
 markdown: kramdown
