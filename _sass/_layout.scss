@@ -21,7 +21,8 @@ body {
         width: 100%;
         max-width: 600px;
 
-        &.post {
+        &.post,
+        &.comment {
             max-width: 1200px;
         }
     }
