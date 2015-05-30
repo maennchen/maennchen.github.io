@@ -3,6 +3,7 @@ layout: post
 title:  Installing Jekyll 2.5 on Heroku
 date:   2015-05-27 20:22:13
 categories: jekyll heroku buildpack
+description: This Article helps you to set up Jekyll 2.5 on Heroku.
 ---
 Installing Jekyll 2.5 on Heroku isn't very dificult. You just have to find a working manual.
 

@@ -3,6 +3,7 @@ layout: post
 title:  Do nosetests for pyhon-eve
 date:   2015-05-27 22:19:30
 categories: nosetest python eve flask
+description: This little tutorial explains how to set up nosetests for python-eve.
 ---
 
 This little tutorial explains how to set up nosetests for python-eve.
