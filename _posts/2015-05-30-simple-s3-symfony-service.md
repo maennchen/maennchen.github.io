@@ -9,7 +9,7 @@ description: How to implement a simple Syomfony2 Service to upload Files to S3.
 How to implement a simple Syomfony2 Service to upload Files to S3.
 
 # Install the Amazon SDK
-Execute the folloeing Statement:
+Execute the following Statement:
 <script src="https://gist.github.com/maennchen/b075407e1f4f722278f4.js?file=console.sh"></script>
 
 # Create a Service Class
