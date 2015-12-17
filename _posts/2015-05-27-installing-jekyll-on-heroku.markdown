@@ -14,14 +14,9 @@ First follow this tutorial:
 ## Heroku
 After that you can create a normal Heroku Ruby app without even using a custom buildpack.
 
-{% highlight bash %}
-heroku create
-git push heroku master
-{% endhighlight %}
+<script src="https://gist.github.com/maennchen/0ebf128e841678b21a48.js?file=heroku.sh"></script>
 
 ## Fix fucked up buildpack
 If you allready followed any of the popular tutorials, you'll have a custom buildpack set in Heroku. To reset the buildpack, run this command:
 
-{% highlight bash %}
-heroku buildpacks:set https://github.com/heroku/heroku-buildpack-ruby.git
-{% endhighlight %}
+<script src="https://gist.github.com/maennchen/0ebf128e841678b21a48.js?file=fix.sh"></script>
