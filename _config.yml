@@ -5,7 +5,7 @@ phone: +41 78 724 57 90
 description: > # this means to ignore newlines until "baseurl:"
   Personal Homepage and Blog of Jonatan Männchen
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://commanders.ch" # the base hostname & protocol for your site
+url: "https://maennchen.dev" # the base hostname & protocol for your site
 twitter_username: maennchen_
 github_username:  maennchen
 asset_version: 1

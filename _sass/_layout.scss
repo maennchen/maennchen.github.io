@@ -52,7 +52,7 @@ body {
             &:nth-last-child(2):not(:first-child) {
                 font-size: 3rem;
             }
-            &:nth-child(3):not(:nth-last-child(2)) {
+            &:nth-child(3):not(:nth-last-child(2)):not(:last-child) {
                 font-size: 4.5rem;
             }
         }
