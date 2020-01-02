@@ -1,8 +1,3 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
-gem 'jekyll', '> 2.5'
-gem 'kramdown'
-gem 'rake'
-gem 'foreman'
-gem 'thin'
-gem 'rack-contrib'
+
+gem "github-pages", group: :jekyll_plugins
