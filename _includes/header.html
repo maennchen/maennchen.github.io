@@ -1,17 +1,18 @@
-<nav>
+<nav aria-label="Main navigation">
   <ul>
-      {% assign nav_pages = site.pages | where_exp: "p", "p.icon" %}
-      {% for page in nav_pages %}
-        <li style="order: {{ page.priority | default: 99 }}">
-          <a href="{{ page.url | prepend: site.baseurl }}">
-            <i class="icon-{{ page.icon }}"></i>
+      {% assign nav_pages = site.pages | where_exp: "p", "p.icon" | sort: "priority" %}
+      {% for nav_page in nav_pages %}
+        {% assign nav_title = nav_page.title | default: "Home" %}
+        <li>
+          <a href="{{ nav_page.url | prepend: site.baseurl }}" title="{{ nav_title }}" aria-label="{{ nav_title }}"{% if page.url == nav_page.url %} class="active" aria-current="page"{% endif %}>
+            <i class="icon-{{ nav_page.icon }}" aria-hidden="true"></i>
           </a>
         </li>
       {% endfor %}
       {% for link in site.external_nav %}
-        <li style="order: {{ link.priority | default: 99 }}">
-          <a href="{{ link.url }}" target="_blank" rel="noopener">
-            <i class="icon-{{ link.icon }}"></i>
+        <li>
+          <a href="{{ link.url }}" title="{{ link.title }}" aria-label="{{ link.title }}" target="_blank" rel="noopener">
+            <i class="icon-{{ link.icon }}" aria-hidden="true"></i>
           </a>
         </li>
       {% endfor %}
