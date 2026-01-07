@@ -213,3 +213,67 @@ section > ul {
   margin: var(--spacing-4) 0 var(--spacing-6) 0;
   font-style: italic;
 }
+
+// ========================================
+// PAGE INTRO
+// ========================================
+.page-intro {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-6);
+}
+
+// ========================================
+// CONTACT CARDS
+// ========================================
+.contact-cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4);
+    padding: var(--spacing-4);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    transition:
+      border-color var(--transition-fast),
+      box-shadow var(--transition-fast);
+
+    &:hover {
+      border-color: var(--color-accent-muted);
+      box-shadow: var(--shadow-sm);
+    }
+
+    i {
+      font-size: 1.5rem;
+      color: var(--color-accent);
+      width: 2.5rem;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    strong {
+      display: block;
+      font-size: var(--font-size-sm);
+      color: var(--color-text-muted);
+      font-weight: var(--font-weight-normal);
+      margin-bottom: var(--spacing-1);
+    }
+
+    a, span {
+      color: var(--color-text-primary);
+    }
+  }
+}
+
+.contact-note {
+  margin-top: var(--spacing-6);
+  color: var(--color-text-muted);
+}
