@@ -1,13 +1,19 @@
 <nav>
   <ul>
-      {% for page in site.pages %}
-        {% if page.icon %}
-          <li>
-            <a href="{{ page.url | prepend: site.baseurl }}">
-              <i class="icon-{{ page.icon }}"></i>
-            </a>
-          </li>
-        {% endif %}
+      {% assign nav_pages = site.pages | where_exp: "p", "p.icon" %}
+      {% for page in nav_pages %}
+        <li style="order: {{ page.priority | default: 99 }}">
+          <a href="{{ page.url | prepend: site.baseurl }}">
+            <i class="icon-{{ page.icon }}"></i>
+          </a>
+        </li>
+      {% endfor %}
+      {% for link in site.external_nav %}
+        <li style="order: {{ link.priority | default: 99 }}">
+          <a href="{{ link.url }}" target="_blank" rel="noopener">
+            <i class="icon-{{ link.icon }}"></i>
+          </a>
+        </li>
       {% endfor %}
   </ul>
 </nav>

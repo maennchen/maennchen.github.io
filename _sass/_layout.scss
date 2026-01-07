@@ -1,64 +1,220 @@
 @import "flexbox";
 
-/**
- * Layout Structure
- */
+// ========================================
+// MAIN LAYOUT
+// ========================================
 body {
+  @include flexbox;
+  @include flex-direction(column);
+  @include align-items(center);
+  @include justify-content(space-between);
+  min-height: 100vh;
+
+  padding: var(--spacing-8) var(--spacing-4);
+
+  @media (min-width: 600px) {
+    padding: var(--spacing-12) var(--spacing-6);
+  }
+
+  > * {
+    width: 100%;
+    max-width: 650px;
+
+    &.post,
+    &.comment {
+      max-width: 800px;
+    }
+  }
+}
+
+// ========================================
+// NAVIGATION & FOOTER ICONS
+// ========================================
+nav, footer {
+  > ul {
     @include flexbox;
-    @include flex-direction(column);
     @include align-items(center);
-    @include justify-content(space-around);
-    min-height: 100vh;
-    box-sizing: border-box;
+    @include justify-content(center);
+    flex-wrap: wrap;
+    gap: var(--spacing-3);
+    list-style: none;
+    padding: 0;
+    margin: 0;
 
-    padding-top: 5vh;
-    padding-bottom: 5vh;
-    padding-left: 2vh;
-    padding-right: 2vh;
-    text-align: justify;
+    @media (min-width: 400px) {
+      gap: var(--spacing-4);
+    }
 
-    > * {
-        width: 100%;
-        max-width: 600px;
+    > li {
+      margin: 0;
 
-        &.post,
-        &.comment {
-            max-width: 1200px;
+      > a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 2.75rem;
+        height: 2.75rem;
+        border-radius: var(--radius-full);
+        background-color: var(--color-surface);
+        border: 1px solid var(--color-border);
+        color: var(--color-text-secondary);
+        font-size: 1.125rem;
+        transition:
+          transform var(--transition-fast),
+          background-color var(--transition-fast),
+          border-color var(--transition-fast),
+          color var(--transition-fast),
+          box-shadow var(--transition-fast);
+
+        &:hover {
+          transform: translateY(-2px);
+          background-color: var(--color-surface-elevated);
+          border-color: var(--color-accent-muted);
+          color: var(--color-accent);
+          box-shadow: var(--shadow-glow);
         }
-    }
 
-    > footer > ul,
-    > nav > ul {
-        width: 100%;
-        @include flexbox;
-        @include align-items(center);
-        @include justify-content(center);
-        list-style: none;
-        padding: 0;
-        margin: 0;
-
-        > li {
-            margin: 1.5rem;
-
-            @media screen and (max-width: 365px) {
-                font-size: 1.5rem !important;
-            }
-
-            &:first-child,
-            &:last-child {
-                font-size: 1.5rem;
-            }
-            &:nth-child(2):not(:last-child),
-            &:nth-last-child(2):not(:first-child) {
-                font-size: 3rem;
-            }
-            &:nth-child(3):not(:nth-last-child(2)):not(:last-child) {
-                font-size: 4.5rem;
-            }
+        &:active {
+          transform: translateY(0);
         }
+
+        i {
+          transition: transform var(--transition-fast);
+        }
+
+        &:hover i {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+// Home icon - slightly larger and highlighted
+nav > ul > li:first-child > a {
+  width: 3.25rem;
+  height: 3.25rem;
+  font-size: 1.375rem;
+  background-color: var(--color-accent-muted);
+  border-color: transparent;
+  color: var(--color-text-primary);
+
+  &:hover {
+    background-color: var(--color-accent);
+    color: var(--color-background);
+    border-color: transparent;
+  }
+}
+
+// ========================================
+// MAIN CONTENT SECTIONS
+// ========================================
+section {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ========================================
+// PAGE HEADER
+// ========================================
+section > header {
+  margin-bottom: var(--spacing-6);
+
+  h1 {
+    margin-bottom: var(--spacing-2);
+  }
+
+  // Post meta (date, author)
+  p {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    margin-bottom: 0;
+  }
+}
+
+// ========================================
+// ARTICLE CONTENT
+// ========================================
+article {
+  padding-top: var(--spacing-4);
+
+  > * + * {
+    margin-top: var(--spacing-4);
+  }
+
+  > h2, > h3, > h4 {
+    margin-top: var(--spacing-8);
+  }
+}
+
+// ========================================
+// HOMEPAGE CONTENT
+// ========================================
+section > ul {
+  list-style: none;
+  margin-left: 0;
+
+  li {
+    padding: var(--spacing-3) 0;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 0;
+
+    &:last-child {
+      border-bottom: none;
     }
 
-    section {
-        margin-top: 2rem;
+    strong {
+      color: var(--color-accent);
+      font-weight: var(--font-weight-semibold);
     }
+  }
+}
+
+// ========================================
+// COMMENTS SECTION (Posts)
+// ========================================
+.comment {
+  margin-top: var(--spacing-16);
+  padding-top: var(--spacing-8);
+  border-top: 1px solid var(--color-border);
+}
+
+// ========================================
+// INTRO HEADING (Homepage)
+// ========================================
+.intro-heading {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.avatar {
+  width: 5rem;
+  height: 5rem;
+  padding: 4px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-accent);
+  background-color: var(--color-surface);
+  flex-shrink: 0;
+}
+
+// ========================================
+// STATEMENT (Homepage)
+// ========================================
+.statement {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  margin: var(--spacing-4) 0 var(--spacing-6) 0;
+  font-style: italic;
 }

@@ -10,6 +10,12 @@ twitter_username: maennchen_
 github_username:  maennchen
 asset_version: 1
 
+# External nav links
+external_nav:
+  - icon: mic
+    url: https://sessionize.com/maennchen/
+    priority: 4
+
 # Build settings
 markdown: kramdown
 exclude:

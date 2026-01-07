@@ -3,37 +3,16 @@
 ---
 @charset "utf-8";
 
+// Import CSS custom properties first (theming foundation)
+@import "variables";
 
-
-// Our variables
-$base-font-family: 'Source Sans Pro', sans-serif;
-$base-font-size:   1.2rem;
-$small-font-size:  .7rem;
-$base-line-height: 2rem;
-
-$spacing-unit:     30px;
-
-$text-color:       #e8e6f1;
-$background-color: #080030;
-$brand-color:      #b8b4d1;
-
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
-
-// Width of the content area
-$content-width:    800px;
-
-$on-palm:          600px;
-$on-laptop:        800px;
-
-
-// Import partials from `sass_dir` (defaults to `_sass`)
+// Import partials
 @import
-		"ie",
-        "base",
-        "layout",
-        "syntax-highlighting",
-       	"https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600",
-       	"../icomoon/style.css"
+    "base",
+    "layout",
+    "syntax-highlighting"
 ;
+
+// External resources
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
+@import "../icomoon/style.css";
