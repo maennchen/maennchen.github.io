@@ -1,2 +1,17 @@
 _site
 .sass-cache
+
+# Devenv
+.devenv*
+devenv.local.nix
+devenv.local.yaml
+
+# direnv
+.direnv
+
+# pre-commit
+.pre-commit-config.yaml
+
+# Claude (managed by DeveEnv)
+.claude
+.mcp.json
