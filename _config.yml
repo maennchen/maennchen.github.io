@@ -12,8 +12,23 @@ asset_version: 1
 
 # Build settings
 markdown: kramdown
-exclude: ['config.ru', 'Gemfile', 'Gemfile.lock', 'vendor', 'Procfile', 'Rakefile']
+exclude:
+  - config.ru
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - Procfile
+  - Rakefile
+  - .devcontainer.json
+  - .github
+  - .claude
+  - .devenv*
+  - devenv.*
+  - .direnv
+  - .envrc
+  - .mcp.json
+  - .ruby-lsp
 
-#Sass
+# Sass
 sass:
-    style: :compressed
+  style: :compressed
