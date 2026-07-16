@@ -1,8 +1,6 @@
 { pkgs, lib, config, inputs, ... }:
 
 {
-  devcontainer.enable = true;
-
   # https://devenv.sh/packages/
   packages = with pkgs; [
     git
