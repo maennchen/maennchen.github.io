@@ -17,3 +17,9 @@ For sensitive communications, you can encrypt your message using my PGP public k
 ```
 
 [Download public key](https://github.com/maennchen.gpg)
+
+## Security Reports
+
+Found a security issue in one of my projects? See
+[security.txt](/.well-known/security.txt) for how to reach me, encrypted
+reports are welcome.

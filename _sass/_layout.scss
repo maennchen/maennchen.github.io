@@ -81,7 +81,15 @@ nav, footer {
           transition: transform var(--transition-fast);
         }
 
-        &:hover i {
+        svg {
+          width: 1em;
+          height: 1em;
+          fill: currentColor;
+          transition: transform var(--transition-fast);
+        }
+
+        &:hover i,
+        &:hover svg {
           transform: scale(1.1);
         }
       }
@@ -174,6 +182,47 @@ section > ul {
       font-weight: var(--font-weight-semibold);
     }
   }
+}
+
+// ========================================
+// ITEM LISTS (Talks, Writing)
+// ========================================
+.item-list {
+  list-style: none;
+  margin-left: 0;
+  padding: 0;
+
+  > li {
+    padding: var(--spacing-3) 0;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 0;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    > strong,
+    > a > strong {
+      color: var(--color-accent);
+      font-weight: var(--font-weight-semibold);
+    }
+
+    p {
+      margin: var(--spacing-1) 0 0 0;
+    }
+  }
+}
+
+.item-meta,
+.item-links {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.section-more {
+  margin-top: var(--spacing-4);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
 }
 
 // ========================================

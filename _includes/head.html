@@ -3,15 +3,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark light">
 
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  {% seo %}
 
   <link rel="stylesheet" href="{{ "/css/main.css?v=" | prepend: site.baseurl | append: site.asset_version }}">
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
 
   {% if page.robots %}
   <meta name="robots" content="{{ page.robots }}">
+  {% endif %}
+
+  {% if page.url == "/" %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jonatan Männchen",
+    "url": "{{ site.url }}/",
+    "image": "{{ site.url }}/android-chrome-512x512.png",
+    "email": "mailto:{{ site.email }}",
+    "jobTitle": "Chief Information Security Officer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Erlang Ecosystem Foundation",
+      "url": "https://erlef.org/"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Winterthur",
+      "addressCountry": "CH"
+    },
+    "sameAs": [
+      "https://github.com/maennchen",
+      "https://www.linkedin.com/in/maennchen",
+      "https://bsky.app/profile/maennchen.dev",
+      "https://twitter.com/maennchen_",
+      "https://sessionize.com/maennchen/",
+      "https://orcid.org/0009-0009-5482-5271"
+    ]
+  }
+  </script>
   {% endif %}
 
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
